@@ -30,6 +30,6 @@ int main() {
     std::cout<<engine.execute("command1",{{"arg1",4}})<<std::endl;
     std::cout<<engine.execute("command2",{{"arg2",4}, {"arg1", 2}})<<std::endl;
     std::cout<<engine.execute("command3",{{"arg2",4}, {"arg1", 2}, {"arg3", -2}})<<std::endl;
-    std::cout<<engine.execute("command3",{{"arg2",4}, {"arg1", 2}}); //exception
+    std::cout<<engine.execute("command3",{{"arg2",4}, {"abracadabra", 2}}); //exception
     return 0;
 }

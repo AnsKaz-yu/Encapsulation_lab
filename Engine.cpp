@@ -5,7 +5,15 @@ int Engine::execute(const std::string& name, const arg_list& m_arg_list) {
         throw std::exception(); //there are no commands with this name
     }
     auto it = MyCommands[name];
-    return it->execute(m_arg_list);
+    int result = INT_MIN;
+    try{
+        result = it->execute(m_arg_list);
+    }
+    catch(...){
+        std::cout<<"Error: wrong args" <<std::endl;
+    }
+
+    return result;
 }
 
 void Engine::register_command(Wrapper* wrapper, const std::string& name) {

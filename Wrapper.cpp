@@ -1,6 +1,9 @@
 #include "Wrapper.h"
 
 int Wrapper::execute(const arg_list &new_list) {
+    if (list.size() != new_list.size()){
+        throw std::exception(); //invalid count of arguments
+    }
     //setting the values of the arguments according to the name
     for (const auto& arg : new_list){
         if (list.find(arg.first) == list.end()){
